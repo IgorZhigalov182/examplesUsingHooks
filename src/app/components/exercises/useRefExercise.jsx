@@ -2,11 +2,13 @@ import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
     const blockRef = useRef();
+    const button = useRef();
 
     const handleChangeBlock = () => {
         blockRef.current.children[0].innerHTML = "Текст";
         blockRef.current.style.height = "150px";
         blockRef.current.style.width = "80px";
+        button.current.remove();
     };
 
     return (
@@ -31,6 +33,7 @@ const UseRefExercise = () => {
                 <small>Блок</small>
             </div>
             <button
+                ref={button}
                 className="btn btn-secondary mt-3"
                 onClick={handleChangeBlock}
             >
