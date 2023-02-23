@@ -24,7 +24,7 @@ const ProgrammableActionsExample = () => {
             </label>
             <input
                 ref={inputRef}
-                type="emaik"
+                type="email"
                 className="form-control"
                 id="email"
             />
