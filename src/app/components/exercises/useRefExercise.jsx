@@ -2,15 +2,12 @@ import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
     const blockRef = useRef();
-    const button = useRef();
 
-    const handleChangeBlock = () => {
-        blockRef.current.children[0].innerHTML = "Текст";
-        blockRef.current.style.height = "150px";
-        blockRef.current.style.width = "80px";
-        button.current.remove();
+    const handleClick = () => {
+        blockRef.current.children[0].innerText = "text";
+        blockRef.current.style.width = "150px";
+        blockRef.current.style.height = "80px";
     };
-
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -32,12 +29,8 @@ const UseRefExercise = () => {
             >
                 <small>Блок</small>
             </div>
-            <button
-                ref={button}
-                className="btn btn-secondary mt-3"
-                onClick={handleChangeBlock}
-            >
-                Изменить блок
+            <button className="btn btn-secondary my-4" onClick={handleClick}>
+                Trigger action
             </button>
         </CollapseWrapper>
     );
